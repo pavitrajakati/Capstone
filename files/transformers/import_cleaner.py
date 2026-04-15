@@ -47,7 +47,8 @@ class ImportCleanerTransformer(BaseTransformer):
             if not stripped.startswith("import "):
                 new_lines.append(line)
                 continue
-
+            if "javax.xml.bind" in line:
+                return content, []
             # Extract the import path (strip 'import ' and trailing ';')
             import_path = stripped[len("import "):].rstrip(";").strip()
             matched = False
