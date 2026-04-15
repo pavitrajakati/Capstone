@@ -40,6 +40,7 @@ from transformers.add_notify_transform   import AddNotifyTransformer
 from transformers.add_notify_transform   import AddNotifyTransformer
 from transformers.remove_notify_transform import RemoveNotifyTransformer
 from transformers.add_notify_component_peer_transform import AddNotifyComponentPeerTransformer
+from transformers.remove_notify_component_peer_transform import RemoveNotifyComponentPeerTransformer
 
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
@@ -55,6 +56,7 @@ class JavaTransformer:
             AddNotifyTransformer(),
             RemoveNotifyTransformer(),
             AddNotifyComponentPeerTransformer(), 
+            RemoveNotifyComponentPeerTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
