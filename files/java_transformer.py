@@ -34,7 +34,7 @@ from transformers.sequenced_collections  import SequencedCollectionsTransformer
 from transformers.instanceof_switch      import InstanceofSwitchTransformer
 from transformers.record_pattern         import RecordPatternTransformer
 from transformers.finalize_transform     import FinalizeTransformer
-
+from transformers.drag_source_transform  import DragSourceContextTransformer
 
 
 class JavaTransformer:
@@ -46,6 +46,7 @@ class JavaTransformer:
             WrapperConstructorTransformer(),
             DeprecatedMethodsTransformer(),
             FinalizeTransformer(),
+            DragSourceContextTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
