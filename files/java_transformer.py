@@ -42,6 +42,7 @@ from transformers.remove_notify_transform import RemoveNotifyTransformer
 from transformers.add_notify_component_peer_transform import AddNotifyComponentPeerTransformer
 from transformers.remove_notify_component_peer_transform import RemoveNotifyComponentPeerTransformer
 from transformers.jaxb_helpers_removal import JAXBHelpersRemovalTransformer
+from transformers.jaxb_util_removal import JAXBUtilRemovalTransformer
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
         self.verbose   = verbose
@@ -58,6 +59,7 @@ class JavaTransformer:
             AddNotifyComponentPeerTransformer(), 
             RemoveNotifyComponentPeerTransformer(),
             JAXBHelpersRemovalTransformer(),
+            JAXBUtilRemovalTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
