@@ -33,6 +33,8 @@ from transformers.string_format          import StringFormatTransformer
 from transformers.sequenced_collections  import SequencedCollectionsTransformer
 from transformers.instanceof_switch      import InstanceofSwitchTransformer
 from transformers.record_pattern         import RecordPatternTransformer
+from transformers.finalize_transform     import FinalizeTransformer
+
 
 
 class JavaTransformer:
@@ -43,6 +45,7 @@ class JavaTransformer:
             ImportCleanerTransformer(),
             WrapperConstructorTransformer(),
             DeprecatedMethodsTransformer(),
+            FinalizeTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
