@@ -36,6 +36,8 @@ from transformers.record_pattern         import RecordPatternTransformer
 from transformers.finalize_transform     import FinalizeTransformer
 from transformers.drag_source_transform  import DragSourceContextTransformer
 from transformers.drag_source_context_peer_transform import DragSourceContextPeerTransformer
+from transformers.add_notify_transform   import AddNotifyTransformer
+from transformers.add_notify_transform   import AddNotifyTransformer
 
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
@@ -48,6 +50,7 @@ class JavaTransformer:
             FinalizeTransformer(),
             DragSourceContextTransformer(),
             DragSourceContextPeerTransformer(),
+            AddNotifyTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
