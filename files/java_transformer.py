@@ -35,7 +35,7 @@ from transformers.instanceof_switch      import InstanceofSwitchTransformer
 from transformers.record_pattern         import RecordPatternTransformer
 from transformers.finalize_transform     import FinalizeTransformer
 from transformers.drag_source_transform  import DragSourceContextTransformer
-
+from transformers.drag_source_context_peer_transform import DragSourceContextPeerTransformer
 
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
@@ -47,6 +47,7 @@ class JavaTransformer:
             DeprecatedMethodsTransformer(),
             FinalizeTransformer(),
             DragSourceContextTransformer(),
+            DragSourceContextPeerTransformer(),
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
