@@ -39,6 +39,7 @@ from transformers.drag_source_context_peer_transform import DragSourceContextPee
 from transformers.add_notify_transform   import AddNotifyTransformer
 from transformers.add_notify_transform   import AddNotifyTransformer
 from transformers.remove_notify_transform import RemoveNotifyTransformer
+from transformers.add_notify_component_peer_transform import AddNotifyComponentPeerTransformer
 
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
@@ -53,6 +54,7 @@ class JavaTransformer:
             DragSourceContextPeerTransformer(),
             AddNotifyTransformer(),
             RemoveNotifyTransformer(),
+            AddNotifyComponentPeerTransformer(), 
             # Phase 2
             DiamondOperatorTransformer(),
             InstanceofPatternTransformer(),
