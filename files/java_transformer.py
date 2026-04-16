@@ -22,6 +22,7 @@ java_transformer.py — Orchestrates the full transformation pipeline.
   12. RecordPatterns         — JEP 440  record deconstruction (same-file records)
 """
 from transformers.import_cleaner         import ImportCleanerTransformer
+
 from transformers.wrapper_constructors   import WrapperConstructorTransformer
 from transformers.deprecated_methods     import DeprecatedMethodsTransformer
 from transformers.diamond_operator       import DiamondOperatorTransformer
@@ -43,12 +44,14 @@ from transformers.add_notify_component_peer_transform import AddNotifyComponentP
 from transformers.remove_notify_component_peer_transform import RemoveNotifyComponentPeerTransformer
 from transformers.jaxb_helpers_removal import JAXBHelpersRemovalTransformer
 from transformers.jaxb_util_removal import JAXBUtilRemovalTransformer
+from transformers.jaxb_bind_transform import JAXBBindTransformer
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
         self.verbose   = verbose
         self._pipeline = [
             # Phase 1
             ImportCleanerTransformer(),
+            JAXBBindTransformer(),
             WrapperConstructorTransformer(),
             DeprecatedMethodsTransformer(),
             FinalizeTransformer(),
