@@ -43,7 +43,9 @@ class ImportCleanerTransformer(BaseTransformer):
 
         for line in lines:
             stripped = line.strip()
-
+            if stripped.startswith("import javax.xml.bind"):
+                new_lines.append(line)
+                continue
             if not stripped.startswith("import "):
                 new_lines.append(line)
                 continue
