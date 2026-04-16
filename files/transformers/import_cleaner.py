@@ -46,6 +46,9 @@ class ImportCleanerTransformer(BaseTransformer):
             if stripped.startswith("import javax.xml.bind"):
                 new_lines.append(line)
                 continue
+            if stripped.startswith("import javax.xml.soap"):
+                new_lines.append(line)
+                continue
             if not stripped.startswith("import "):
                 new_lines.append(line)
                 continue
