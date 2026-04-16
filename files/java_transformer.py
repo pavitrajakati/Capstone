@@ -46,6 +46,7 @@ from transformers.jaxb_helpers_removal import JAXBHelpersRemovalTransformer
 from transformers.jaxb_util_removal import JAXBUtilRemovalTransformer
 from transformers.jaxb_bind_transform import JAXBBindTransformer
 from transformers.soap_transform import SOAPTransformer
+from transformers.jaxws_soap_handler_transform import JAXWSSOAPHandlerTransformer
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
         self.verbose   = verbose
@@ -54,6 +55,7 @@ class JavaTransformer:
             ImportCleanerTransformer(),
             JAXBBindTransformer(),
             SOAPTransformer(),
+            JAXWSSOAPHandlerTransformer(),
             WrapperConstructorTransformer(),
             DeprecatedMethodsTransformer(),
             FinalizeTransformer(),
