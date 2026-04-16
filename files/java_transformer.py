@@ -45,6 +45,7 @@ from transformers.remove_notify_component_peer_transform import RemoveNotifyComp
 from transformers.jaxb_helpers_removal import JAXBHelpersRemovalTransformer
 from transformers.jaxb_util_removal import JAXBUtilRemovalTransformer
 from transformers.jaxb_bind_transform import JAXBBindTransformer
+from transformers.soap_transform import SOAPTransformer
 class JavaTransformer:
     def __init__(self, verbose: bool = False) -> None:
         self.verbose   = verbose
@@ -52,6 +53,7 @@ class JavaTransformer:
             # Phase 1
             ImportCleanerTransformer(),
             JAXBBindTransformer(),
+            SOAPTransformer(),
             WrapperConstructorTransformer(),
             DeprecatedMethodsTransformer(),
             FinalizeTransformer(),
